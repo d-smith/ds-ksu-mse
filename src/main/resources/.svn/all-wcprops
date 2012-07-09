@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7/kstate-mse-ds/src/main/resources
+END
+hibernate2.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/hibernate2.cfg.xml
+END
+services.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/services.xml
+END
+timerConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/timerConfig.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/7/kstate-mse-ds/src/main/resources/applicationContext.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/log4j.properties
+END
+hazelcast.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/hazelcast.xml
+END
+hibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/hibernate.cfg.xml
+END

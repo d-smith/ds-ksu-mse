@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2009 7:05:40 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.ActivityDefinition" table="ACTIVITY_DEFINITION" >
+    <cache usage="read-write" include="all" />
+        <id name="activitydefinitionid" type="long">
+            <column name="ACTIVITYDEFINITIONID" />
+            <generator class="assigned" />
+        </id>
+        <property name="processdefinitionid" type="long">
+            <column name="PROCESSDEFINITIONID" not-null="true" />
+        </property>
+        <property name="swimlaneid" type="java.lang.Long">
+            <column name="SWIMLANEID" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="30" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="isstart" type="java.lang.Boolean">
+            <column name="ISSTART" />
+        </property>
+        <property name="isend" type="java.lang.Boolean">
+            <column name="ISEND" />
+        </property>
+        <set name="activityProperties" inverse="true" lazy="false">
+            <key>
+                <column name="ACTIVITYDEFINITIONID" not-null="true" />
+            </key>
+            <one-to-many class="domain.ActivityProperty" />
+        </set>
+    </class>
+</hibernate-mapping>

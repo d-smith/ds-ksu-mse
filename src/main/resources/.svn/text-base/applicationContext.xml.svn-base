@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+
+		<property name="driverClass">
+			<value>org.h2.Driver</value>
+		</property>
+		<!--
+			ec2 style - note no / after ~ <property
+			name="jdbcUrl"><value>jdbc:h2:tcp://domU-12-31-39-00-4C-E4.compute-1.internal/~msedb;MVCC=TRUE</value></property>
+		-->
+		<property name="jdbcUrl"><value>jdbc:h2:tcp://localhost/~/msedb;MVCC=TRUE</value></property>
+		<!-- property name="jdbcUrl"><value>jdbc:h2:tcp://ec2-67-202-62-125.compute-1.amazonaws.com/~msedb;MVCC=TRUE</value></property-->
+
+		
+		<property name="user">
+			<value>sa</value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+		<property name="initialPoolSize">
+			<value>5</value>
+		</property>
+		<property name="minPoolSize">
+			<value>5</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>10</value>
+		</property>
+		<property name="idleConnectionTestPeriod">
+			<value>200</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>1</value>
+		</property>
+		<property name="maxStatements">
+			<value>100</value>
+		</property>
+		<property name="numHelperThreads">
+			<value>3</value>
+		</property>
+	</bean>
+
+	<bean id="hazelcastDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+
+		<property name="driverClass">
+			<value>org.h2.Driver</value>
+		</property>
+		<!--property name="jdbcUrl"><value>jdbc:h2:tcp://ec2-67-202-62-125.compute-1.amazonaws.com/~msedb;MVCC=TRUE</value></property-->
+		<property name="jdbcUrl"><value>jdbc:h2:tcp://localhost/~/msedb;MVCC=TRUE</value></property>
+
+		<property name="user">
+			<value>sa</value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+		<property name="initialPoolSize">
+			<value>5</value>
+		</property>
+		<property name="minPoolSize">
+			<value>5</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>10</value>
+		</property>
+		<property name="idleConnectionTestPeriod">
+			<value>200</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>1</value>
+		</property>
+		<property name="maxStatements">
+			<value>100</value>
+		</property>
+		<property name="numHelperThreads">
+			<value>3</value>
+		</property>
+	</bean>
+
+
+	<bean id="mySessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop> <!-- true for unit test  -->
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.cache.useminimalputs">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.cache.region.factory_class">com.hazelcast.hibernate.HazelcastCacheRegionFactory
+				</prop>
+			</props>
+		</property>
+<property name="mappingResources">
+			<list>
+				<value>domain/ActivityClaim.hbm.xml</value>
+				<value>domain/ActivityDefinition.hbm.xml</value>
+				<value>domain/ActivityInstance.hbm.xml</value>
+				<value>domain/ActivityProperty.hbm.xml</value>
+				<value>domain/ActivityRole.hbm.xml</value>
+				<value>domain/ConnectorDefinition.hbm.xml</value>
+				<value>domain/GatewayDefinition.hbm.xml</value>
+				<value>domain/ProcessDefinition.hbm.xml</value>
+				<value>domain/ProcessInstance.hbm.xml</value>
+				<value>domain/PropertyDefinition.hbm.xml</value>
+				<value>domain/PropertyValue.hbm.xml</value>
+				<value>domain/Role.hbm.xml</value>
+				<value>domain/Swimlane.hbm.xml</value>
+				<value>domain/User.hbm.xml</value>
+			</list>
+		</property>
+
+		<!--
+			<property name="mappingDirectoryLocations"> <list>
+			<value>classpath:/domain</value> </list> </property>
+		-->
+	</bean>
+
+	<bean id="hazelcastSessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="hazelcastDataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.cache.useminimalputs">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.cache.region.factory_class">com.hazelcast.hibernate.HazelcastCacheRegionFactory
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>domain/ActivityClaim.hbm.xml</value>
+				<value>domain/ActivityDefinition.hbm.xml</value>
+				<value>domain/ActivityInstance.hbm.xml</value>
+				<value>domain/ActivityProperty.hbm.xml</value>
+				<value>domain/ActivityRole.hbm.xml</value>
+				<value>domain/ConnectorDefinition.hbm.xml</value>
+				<value>domain/GatewayDefinition.hbm.xml</value>
+				<value>domain/ProcessDefinition.hbm.xml</value>
+				<value>domain/ProcessInstance.hbm.xml</value>
+				<value>domain/PropertyDefinition.hbm.xml</value>
+				<value>domain/PropertyValue.hbm.xml</value>
+				<value>domain/Role.hbm.xml</value>
+				<value>domain/Swimlane.hbm.xml</value>
+				<value>domain/User.hbm.xml</value>
+			</list>
+		</property>
+
+		<!--
+			<property name="mappingDirectoryLocations"> <list>
+			<value>classpath:/domain</value> </list> </property>
+		-->
+	</bean>
+
+
+	<bean id="propertyDefinitionDAOtarget" class="dao.PropertyDefinitionDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="propertyDefinitionDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="propertyDefinitionDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="retrieve*">PROPAGATION_REQUIRED</prop>
+				<prop key="persist">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="processInstanceDAOtarget" class="dao.ProcessInstanceDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="processInstanceDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="processInstanceDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="persist">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="processDefinitionDAOtarget" class="dao.ProcessDefinitionDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="processDefinitionDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="processDefinitionDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="retrieve*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="propertyValueDAOTarget" class="dao.PropertyValueDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="propertyValueDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="propertyValueDAOTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="activityDefinitionDAOtarget" class="dao.ActivityDefinitionDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="activityDefinitionDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="activityDefinitionDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="retrieve*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="swimlaneDAOtarget" class="dao.SwimlaneDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="swimlaneDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="swimlaneDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="retrieve*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="activityClaimDAOtarget" class="dao.ActivityClaimDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="activityClaimDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="activityClaimDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="claimActivity">PROPAGATION_REQUIRED</prop>
+				<prop key="releaseClaim">PROPAGATION_REQUIRED</prop>
+				<prop key="activityClaimed">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="activityInstanceDAOtarget" class="dao.ActivityInstanceDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="activityInstanceDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="activityInstanceDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="retrieve">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="connectorDefinitionDAOtarget" class="dao.ConnectorDefinitionDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<bean id="connectorDefinitionDAO"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="connectorDefinitionDAOtarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="getConnected">PROPAGATION_REQUIRED</prop>
+				<prop key="getConnectorDefinition">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="propertyDefinitionControllerTarget" class="controller.PropertyDefinitionControllerImpl">
+		<property name="propertyDefinitionDAO" ref="propertyDefinitionDAO" />
+	</bean>
+
+	<bean id="propertyDefinitionController"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="propertyDefinitionControllerTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="updatePropertyDescription">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="processExecutionControllerTarget" class="controller.ProcessExecutionControllerImpl">
+		<property name="activityInstanceDAO">
+			<ref bean="activityInstanceDAO" />
+		</property>
+		<property name="propertyValueDAO">
+			<ref bean="propertyValueDAO" />
+		</property>
+	</bean>
+
+	<bean id="processExecutionController"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="processExecutionControllerTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="executeTask">PROPAGATION_REQUIRED</prop>
+				<prop key="instantiateProcess">PROPAGATION_REQUIRED</prop>
+				<prop key="retrieveTask">PROPAGATION_REQUIRED</prop>
+				<prop key="retrieveTaskList">PROPAGATION_REQUIRED,readOnly
+				</prop>
+				<prop key="retrieveProcessTaskList">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!--
+		<bean id="AtomikosTransactionManager"
+		class="com.atomikos.icatch.jta.UserTransactionManager"
+		init-method="init" destroy-method="close"> <property
+		name="forceShutdown" value="false" /> </bean> <bean
+		id="AtomikosUserTransaction"
+		class="com.atomikos.icatch.jta.UserTransactionImp"> <property
+		name="transactionTimeout" value="300" /> </bean>
+	-->
+	<!--
+		Configure the Spring framework to use JTA transactions from Atomikos
+		<bean id="transactionManager"
+		class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManager" ref="AtomikosTransactionManager"
+		/> <property name="userTransaction" ref="AtomikosUserTransaction" />
+		</bean>
+	-->
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+
+	<!--
+		<bean id="txnTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager"/> </bean>
+	-->
+	<bean id="processDefMapDelegate" class="hazelcast.ProcessDefMapStoreDelegateImpl">
+		<property name="processDefinitionDAO" ref="hcprocessDefinitionDAO" />
+	</bean>
+	<bean id="propertyDefMapDelegate" class="hazelcast.PropertyDefMapStoreDelegateImpl">
+		<property name="propertyDefinitionDAO" ref="hcpropertyDefinitionDAO" />
+	</bean>
+	<bean id="connectorDefMapDelegate" class="hazelcast.ConnectorDefMapStoreDelegateImpl">
+		<property name="connectorDefinitionDAO" ref="hcconnectorDefinitionDAO" />
+	</bean>
+	<bean id="swimlaneDefMapDelegate" class="hazelcast.SwimlaneDefMapStoreImpl">
+		<property name="swimlaneDAO" ref="hcswimlaneDAO" />
+	</bean>
+
+	<bean id="processInstanceMapDelegate" class="hazelcast.ProcessInstanceMapStoreImpl">
+		<property name="processInstanceDAO" ref="hcprocessInstanceDAO" />
+	</bean>
+
+	<bean id="completedActivitiesMapDelegate" class="hazelcast.CompletedActivitiesMapStoreImpl">
+		<property name="activityInstanceDAO" ref="hcactivityInstanceDAO" />
+	</bean>
+
+	<bean id="hcprocessInstanceDAO" class="dao.ProcessInstanceDAOImpl">
+		<property name="sessionFactory" ref="hazelcastSessionFactory" />
+	</bean>
+
+	<bean id="hcprocessDefinitionDAO" class="dao.ProcessDefinitionDAOImpl">
+		<property name="sessionFactory" ref="hazelcastSessionFactory" />
+	</bean>
+
+	<bean id="hcpropertyDefinitionDAO" class="dao.PropertyDefinitionDAOImpl">
+		<property name="sessionFactory" ref="hazelcastSessionFactory" />
+	</bean>
+
+	<bean id="hcconnectorDefinitionDAO" class="dao.ConnectorDefinitionDAOImpl">
+		<property name="sessionFactory" ref="hazelcastSessionFactory" />
+	</bean>
+
+	<bean id="hcswimlaneDAO" class="dao.SwimlaneDAOImpl">
+		<property name="sessionFactory" ref="hazelcastSessionFactory" />
+	</bean>
+
+	<bean id="hcactivityInstanceDAO" class="dao.ActivityInstanceDAOImpl">
+		<property name="sessionFactory" ref="hazelcastSessionFactory" />
+	</bean>
+
+	<tx:annotation-driven />
+
+
+
+
+</beans>

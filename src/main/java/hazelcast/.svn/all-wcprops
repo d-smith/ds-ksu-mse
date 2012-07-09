@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast
+END
+ProcessInstanceMapStoreImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/ProcessInstanceMapStoreImpl.java
+END
+ConnectorDefMapStoreDelegateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/ConnectorDefMapStoreDelegateImpl.java
+END
+ConnectorDefMapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/ConnectorDefMapStore.java
+END
+ProcessDefMapStoreDelegateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/ProcessDefMapStoreDelegateImpl.java
+END
+ProcessDefMapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/ProcessDefMapStore.java
+END
+HazelcastConsts.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/HazelcastConsts.java
+END
+SwimlaneDefMapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/SwimlaneDefMapStore.java
+END
+SwimlaneDefMapStoreImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/SwimlaneDefMapStoreImpl.java
+END
+PropertyDefMapStoreDelegateImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/PropertyDefMapStoreDelegateImpl.java
+END
+CompletedActivitiesMapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/CompletedActivitiesMapStore.java
+END
+CompletedActivitiesMapStoreImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/CompletedActivitiesMapStoreImpl.java
+END
+ProcessInstanceMapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/ProcessInstanceMapStore.java
+END
+PropertyDefMapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/hazelcast/PropertyDefMapStore.java
+END

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/domain
+END
+Role.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/Role.java
+END
+ActivityProperty.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityProperty.java
+END
+ActivityClaim.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityClaim.java
+END
+ProcessInstance.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ProcessInstance.java
+END
+ConnectorDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ConnectorDefinition.java
+END
+ActivityDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityDefinition.java
+END
+GatewayDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/GatewayDefinition.java
+END
+FieldData.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/FieldData.java
+END
+ActivityPropertyId.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityPropertyId.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/User.java
+END
+ActivityRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityRole.java
+END
+ActivityClaimId.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityClaimId.java
+END
+Swimlane.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/Swimlane.java
+END
+ActivityInstance.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityInstance.java
+END
+PropertyValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/PropertyValue.java
+END
+ProcessDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ProcessDefinition.java
+END
+ActivityRoleId.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityRoleId.java
+END
+ActivityState.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/ActivityState.java
+END
+PropertyDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/15/kstate-mse-ds/src/main/java/domain/PropertyDefinition.java
+END

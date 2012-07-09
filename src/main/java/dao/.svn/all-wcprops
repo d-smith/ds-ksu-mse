@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao
+END
+PropertyDefinitionDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/PropertyDefinitionDAOImpl.java
+END
+SwimlaneDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/SwimlaneDAO.java
+END
+ActivityInstanceDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ActivityInstanceDAO.java
+END
+PropertyValueDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/PropertyValueDAO.java
+END
+ActivityClaimDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4/kstate-mse-ds/src/main/java/dao/ActivityClaimDAOImpl.java
+END
+ConnectorDefinitionDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ConnectorDefinitionDAOImpl.java
+END
+ProcessInstanceDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ProcessInstanceDAOImpl.java
+END
+ActivityDefinitionDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ActivityDefinitionDAOImpl.java
+END
+ProcessDefinitionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ProcessDefinitionDAO.java
+END
+PropertyDefinitionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/PropertyDefinitionDAO.java
+END
+SwimlaneDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/SwimlaneDAOImpl.java
+END
+ActivityClaimDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4/kstate-mse-ds/src/main/java/dao/ActivityClaimDAO.java
+END
+ActivityInstanceDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ActivityInstanceDAOImpl.java
+END
+PropertyValueDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/PropertyValueDAOImpl.java
+END
+ProcessInstanceDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ProcessInstanceDAO.java
+END
+ConnectorDefinitionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ConnectorDefinitionDAO.java
+END
+ActivityDefinitionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ActivityDefinitionDAO.java
+END
+ProcessDefinitionDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/14/kstate-mse-ds/src/main/java/dao/ProcessDefinitionDAOImpl.java
+END

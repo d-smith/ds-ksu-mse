@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence
+END
+PropertyDefinitionDAOTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence/PropertyDefinitionDAOTest.java
+END
+ActivityInstanceDAOTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence/ActivityInstanceDAOTest.java
+END
+PropretyValueDAOTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence/PropretyValueDAOTest.java
+END
+ActivityClaimDAOTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence/ActivityClaimDAOTest.java
+END
+ConnectorDefinitionDAOTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence/ConnectorDefinitionDAOTest.java
+END
+ProcessInstanceDAOTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/persistence/ProcessInstanceDAOTest.java
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/17/kstate-mse-ds/src/main/java/service
+END
+PerformanceStats.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/service/PerformanceStats.java
+END
+HibernateStats.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/service/HibernateStats.java
+END
+HibernateStatsImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/service/HibernateStatsImpl.java
+END
+PerformanceStatsImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/17/kstate-mse-ds/src/main/java/service/PerformanceStatsImpl.java
+END
+ProcessExecution.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/17/kstate-mse-ds/src/main/java/service/ProcessExecution.java
+END
+ProcessExecutionImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/service/ProcessExecutionImpl.java
+END
+PropertyDefinitionSvc.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/17/kstate-mse-ds/src/main/java/service/PropertyDefinitionSvc.java
+END
+PropertyDefinitionSvcImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/16/kstate-mse-ds/src/main/java/service/PropertyDefinitionSvcImpl.java
+END

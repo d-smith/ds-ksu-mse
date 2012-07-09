@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="MSESessionFactory">
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <!--
+        <property name="hibernate.connection.url">jdbc:h2:tcp://localhost/~mse/</property>
+         -->
+        <property name="hibernate.connection.url">jdbc:h2:tcp://ei0260vwin/~mse/</property> 
+        <property name="hibernate.connection.username">mse</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+    </session-factory>
+</hibernate-configuration>

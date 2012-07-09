@@ -1,0 +1,26 @@
+<html>
+<body>
+<p>
+This application is an architecture proof of concept that provides an abstraction of a business
+process management system to allow the scalability and performance characteristics of the
+architecture to be examined.
+</p>
+<p>
+The application has metadata definitions stored in a database describing context needed for
+process execution: the sequence of tasks, the data assocaited with each task, and so on. Each 
+runtime transaction needs to read the metadata to determine the required data and the processing
+that must be done based on the process definition. This metadata has very low volatility - it
+is rarely written (and in a real system would never be overwritten as updates would be stored
+as a new version), and constantly read.
+</p>
+<p>
+To reduce the amount of time spent reading metadata from the database, 
+it is cached in the hazelcast in-memory
+data grid (IMDG). To reduce contention, transactions are written to the grid, which persists them
+using a write behind strategy to the database. For availability, Hazelcast stores data on multiple
+cluster nodes such that the data can service the failure of an individual node.
+</p>
+<p>For more details on the system, including its design and architecure, refer to documents on the 
+<a href="http://people.cis.ksu.edu/~dougs">MSE project site.</a></p>
+</body>
+</html>

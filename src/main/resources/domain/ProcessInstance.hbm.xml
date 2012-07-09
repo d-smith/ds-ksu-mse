@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 26, 2009 10:57:16 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.ProcessInstance" table="PROCESS_INSTANCE" >
+        <id name="processinstanceid" type="long">
+            <column name="PROCESSINSTANCEID" />
+            <!--
+            <generator class="org.hibernate.id.enhanced.TableGenerator" />
+            -->
+        </id>
+        <many-to-one name="processDefinition" class="domain.ProcessDefinition" fetch="select">
+            <column name="PROCESSDEFINITIONID" />
+        </many-to-one>
+        <set name="activityInstances" inverse="true">
+            <key>
+                <column name="PROCESSINSTANCEID" not-null="true" />
+            </key>
+            <one-to-many class="domain.ActivityInstance" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/kstate-mse-ds/src/main/java/controller
+END
+PropertyDefinitionController.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3/kstate-mse-ds/src/main/java/controller/PropertyDefinitionController.java
+END
+PropertyDefinitionControllerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3/kstate-mse-ds/src/main/java/controller/PropertyDefinitionControllerImpl.java
+END
+ProcessExecutionController.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/8/kstate-mse-ds/src/main/java/controller/ProcessExecutionController.java
+END
+ProcessExecutionControllerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/13/kstate-mse-ds/src/main/java/controller/ProcessExecutionControllerImpl.java
+END

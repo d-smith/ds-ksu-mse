@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8/kstate-mse-ds/src/test/java/service
+END
+HibernateStatsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/service/HibernateStatsTest.java
+END
+PropertyDefinitionSvcTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/service/PropertyDefinitionSvcTest.java
+END
+PerformanceStatsSvcTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/kstate-mse-ds/src/test/java/service/PerformanceStatsSvcTest.java
+END
+ProcessExecutionSvcTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/8/kstate-mse-ds/src/test/java/service/ProcessExecutionSvcTest.java
+END

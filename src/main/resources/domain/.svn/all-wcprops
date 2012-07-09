@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7/kstate-mse-ds/src/main/resources/domain
+END
+PropertyDefinition.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/PropertyDefinition.hbm.xml
+END
+User.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/User.hbm.xml
+END
+ActivityRole.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7/kstate-mse-ds/src/main/resources/domain/ActivityRole.hbm.xml
+END
+Swimlane.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/Swimlane.hbm.xml
+END
+ActivityInstance.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ActivityInstance.hbm.xml
+END
+ActivityProperty.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ActivityProperty.hbm.xml
+END
+PropertyValue.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/PropertyValue.hbm.xml
+END
+Role.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/7/kstate-mse-ds/src/main/resources/domain/Role.hbm.xml
+END
+ActivityClaim.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ActivityClaim.hbm.xml
+END
+ProcessInstance.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ProcessInstance.hbm.xml
+END
+ConnectorDefinition.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ConnectorDefinition.hbm.xml
+END
+ActivityDefinition.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ActivityDefinition.hbm.xml
+END
+ProcessDefinition.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/ProcessDefinition.hbm.xml
+END
+GatewayDefinition.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/kstate-mse-ds/src/main/resources/domain/GatewayDefinition.hbm.xml
+END

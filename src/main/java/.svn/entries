@@ -1,0 +1,46 @@
+10
+
+dir
+17
+http://ds-ksu-mse.googlecode.com/svn/kstate-mse-ds/src/main/java
+http://ds-ksu-mse.googlecode.com/svn
+
+
+
+2010-12-06T04:56:40.375837Z
+17
+doug.smith.mail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5859214d-a7ca-4fae-69e8-a268c1de9258
+
+service
+dir
+
+dao
+dir
+
+controller
+dir
+
+domain
+dir
+
+fault
+dir
+
+hazelcast
+dir
+

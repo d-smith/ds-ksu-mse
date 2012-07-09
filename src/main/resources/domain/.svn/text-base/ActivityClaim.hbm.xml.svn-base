@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 27, 2009 1:42:00 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.ActivityClaim" table="ACTIVITY_CLAIM" >
+        <composite-id name="id" class="domain.ActivityClaimId">
+            <key-property name="userid" type="string">
+                <column name="USERID" length="20" />
+            </key-property>
+            <key-property name="activityinstanceid" type="long">
+                <column name="ACTIVITYINSTANCEID" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2009 7:05:40 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.ActivityProperty" table="ACTIVITY_PROPERTY" >
+    <cache usage="read-write" include="all" />
+        <composite-id name="id" class="domain.ActivityPropertyId">
+            <key-property name="activitydefinitionid" type="long">
+                <column name="ACTIVITYDEFINITIONID" />
+            </key-property>
+            <key-property name="propertydefinitionid" type="long">
+                <column name="PROPERTYDEFINITIONID" />
+            </key-property>
+        </composite-id>
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 26, 2009 10:57:16 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.ConnectorDefinition" table="CONNECTOR_DEFINITION" >
+    <cache usage="read-write" include="all" />
+        <id name="connectorid" type="long">
+            <column name="CONNECTORID" />
+            <generator class="assigned" />
+        </id>
+        <property name="sourceid" type="long">
+            <column name="SOURCEID" not-null="true" />
+        </property>
+        <property name="sinkid" type="long">
+            <column name="SINKID" not-null="true" />
+        </property>
+        <property name="expression" type="string">
+            <column name="EXPRESSION" length="512" />
+        </property>
+    </class>
+</hibernate-mapping>

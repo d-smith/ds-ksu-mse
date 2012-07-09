@@ -1,0 +1,9 @@
+<html>
+<body>
+Data access objects used to encapsulate access to the database.
+<p>Data access is done using the Hibernate object/releational mapping system. DAOs are only
+used via Hazelcast backing stores, such that reads are performed against the IMDG, with
+the IMDG accessing the database on cache misses. Writes are done asynchronously via Hazelcast
+backing store classes that use the DAOs to write data.</p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	<bean id="touchAdminData" class="timer.TouchAdminDataTimer">
+		<property name="propertyDefinitionDAO" ref="propertyDefinitionDAO" />
+	</bean>
+
+	<bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<!-- wait 10 seconds before starting repeated execution -->
+		<property name="delay" value="10000" />
+		<!-- run every 10 seconds -->
+		<property name="period" value="10000" />
+		<property name="timerTask" ref="doIt" />
+	</bean>
+
+	<bean id="doIt"
+		class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+		<property name="targetObject" ref="touchAdminData" />
+		<property name="targetMethod" value="touchFieldDef" />
+	</bean>
+
+	<bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<!-- see the example above -->
+				<ref bean="scheduledTask" />
+			</list>
+		</property>
+	</bean>
+</beans>

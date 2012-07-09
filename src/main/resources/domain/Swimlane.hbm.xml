@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 26, 2009 10:57:16 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.Swimlane" table="SWIMLANE" >
+        <id name="swimlaneid" type="long">
+            <column name="SWIMLANEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="60" not-null="true" />
+        </property>
+        <set name="activityInstances" inverse="true">
+            <key>
+                <column name="SWIMLANEID" not-null="true" />
+            </key>
+            <one-to-many class="domain.ActivityInstance" />
+        </set>
+        <set name="activityDefinitions" inverse="true">
+            <key>
+                <column name="SWIMLANEID" />
+            </key>
+            <one-to-many class="domain.ActivityDefinition" />
+        </set>
+    </class>
+</hibernate-mapping>

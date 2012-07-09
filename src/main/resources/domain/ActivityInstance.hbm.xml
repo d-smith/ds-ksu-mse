@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 26, 2009 10:57:16 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="domain.ActivityInstance" table="ACTIVITY_INSTANCE" >
+        <id name="activityinstanceid" type="long">
+            <column name="ACTIVITYINSTANCEID" />
+            <!-- 
+            <generator class="org.hibernate.id.enhanced.TableGenerator" />
+            -->
+        </id>
+        <many-to-one name="processDefinition" class="domain.ProcessDefinition" fetch="select">
+            <column name="PROCESSDEFINITIONID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="activityDefinition" class="domain.ActivityDefinition" fetch="select">
+            <column name="ACTIVITYDEFINITIONID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="swimlane" class="domain.Swimlane" fetch="select">
+            <column name="SWIMLANEID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="processInstance" class="domain.ProcessInstance" fetch="select">
+            <column name="PROCESSINSTANCEID" not-null="true" />
+        </many-to-one>
+        <property name="state" type="long">
+            <column name="STATE" not-null="true" />
+        </property>
+        <set name="users" inverse="true" table="ACTIVITY_CLAIM">
+            <key>
+                <column name="ACTIVITYINSTANCEID" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.User">
+                <column name="USERID" length="20" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="propertyValues" inverse="true">
+            <key>
+                <column name="ACTIVITYINSTANCEID" not-null="true" />
+            </key>
+            <one-to-many class="domain.PropertyValue" />
+        </set>
+    </class>
+</hibernate-mapping>

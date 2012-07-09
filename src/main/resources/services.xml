@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:jaxws="http://cxf.apache.org/jaxws"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+  <import resource="classpath:META-INF/cxf/cxf.xml"/>
+  <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>
+  <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+<!--  
+  <bean id="propertyDefinitionDAO" class="dao.PropertyDefinitionDAOImpl"/>
+-->  
+  <bean id="propertyDefinitionBean" class="service.PropertyDefinitionSvcImpl">
+  	<property name="propertyDefinitionDAO" ref="propertyDefinitionDAO"/>
+  	<property name="propertyDefinitionController" ref="propertyDefinitionController"/>
+  </bean>
+  
+<bean id="processExecutionBean" class="service.ProcessExecutionImpl">
+	<property name="processExecutionController" ref="processExecutionController"/>
+</bean>
+
+<bean id="hibernateStatsBean" class="service.HibernateStatsImpl">
+	<property name="sessionFactory" ref="mySessionFactory" />
+</bean>
+	
+<bean id="performanceStatsBean" class="service.PerformanceStatsImpl"/>
+ 
+  <jaxws:endpoint id="propertyDefinition"
+                  implementor="#propertyDefinitionBean"
+                  address="/PropertyDefinition"/>
+                  
+  <jaxws:endpoint id="processExecution"
+  					implementor="#processExecutionBean"
+  					address="/ProcessExecution"/>
+  					
+  <jaxws:endpoint id="hibernateStats"
+  					implementor="#hibernateStatsBean"
+  					address="/HibernateStats"/>
+  					
+  <jaxws:endpoint id="performanceStats"
+  					implementor="#performanceStatsBean"
+  					address="/PerformanceStats"/> 
+
+<!-- 
+<jaxws:endpoint id="propertyDefinition"
+                  
+                  implementor="service.PropertyDefinitionSvcImpl"
+                  address="/PropertyDefinition"/>
+ -->
+</beans>
